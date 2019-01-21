@@ -1,0 +1,14 @@
+<!--pages/type/type.wxml-->
+<view class='container' wx:if="{{loadingHidden}}">
+     <view class='sideNav'>
+        <view class='title {{index==tabSel?"chosen":""}}' wx:for="{{typeList}}" wx:key="{{index}}" bindtap='changeNav' data-index='{{index}}' data-type='{{item.type}}'>{{item.type}}</view>
+     </view>
+     <view class='goods'>
+        <view class='goodsImg'>
+            <view class='title'>热销分类</view>
+            <image src='{{tabSel=="0"?root+default:root+goodImg}}' wx:for="{{typeList}}" wx:key="{{index}}" mode='aspectFill' data-id='{{item._id}}' bindtap='goDetails'></image>
+        </view>
+     </view>
+</view>
+<loading wx:if="{{!loadingHidden}}">
+加载中</loading>

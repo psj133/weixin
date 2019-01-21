@@ -1,0 +1,17 @@
+<template name='goods'>
+<view class='goods'> 
+     <view class='good' wx:for="{{products}}" wx:key="{{index}}">
+      <view class='name'>{{item.name}}</view>
+      <view class='line'></view>
+      <view class='content'>
+      <image src='{{root+item.path}}' bindtap='go' data-id='{{item._id}}'></image>
+      <view class='right'>
+          <view style='margin-bottom:20px'>{{item.name}}</view>
+          <view>{{item.type}}</view>
+          <view class='price'>$20</view>
+
+      </view>
+      </view>
+     </view>
+</view>
+</template>

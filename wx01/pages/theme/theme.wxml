@@ -1,0 +1,13 @@
+<!--pages/theme/theme.wxml-->
+<import src='../template/template.wxml'/>
+<view class='container'  wx:if="{{loadingHidden}}">
+  <view class='theme'>
+      <image src='{{root}}{{themeImage}}'></image>
+  </view>
+  <view>
+    <view style='text-align:center'>最新主题</view>
+    <!-- <view wx:for="{{imgUrls}}">{{imgUrls}}</view> -->
+    <template is='goods' data="{{root,products}}"></template> 
+  </view>
+</view>
+<loading wx:if="{{!loadingHidden}}">加载中...</loading>

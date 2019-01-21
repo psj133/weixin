@@ -1,0 +1,27 @@
+<!--pages/shopcar/shopcar.wxml-->
+<view class='container' wx:if="{{goodsList.length>0}}">
+    <view class='shoplist' wx:for="{{goodsList}}" wx:key="{{index}}">
+       <view class='left'>
+        <radio color='green' checked='{{item.checked}}' bindtap='change' data-id='{{item._id}}' data-type='checked'></radio>
+        <image  class='goodsimage'src='{{root}}{{item.goodImg}}' bindtap='goDetails' data-id='{{item._id}}'></image>
+        </view>
+       <view class='right'>
+           <view class='info'>
+               <view>商品名：{{item.name}}</view>
+               <view>{{item.type}}</view>
+           </view>
+           <view class='desc'>好好吃哦  {{item.price}}</view>
+           <view class='num'>数量<button bindtap='change' data-id="{{item._id}}" data-type='add'>+</button><input value='{{item.sum}}'></input><button bindtap='change'data-id="{{item._id}}"data-type='jian' >-</button></view>
+       </view>
+    </view>
+    <view class='bottom'>
+         <view class="allSel"> 
+          <radio color='green' bindtap='selectAll' data-checked="{{totalCounts==goodsList.length?false:true}}" checked="{{selAll}}">全选</radio>  
+        </view>
+        <view class='sumPrice'>总价:{{totalPrice}}</view>
+        <view class='sumCounts'>共有:{{totalCounts}}件</view>
+        <view class='jiesuan' bindtap='pay'>去结算</view>
+    </view>
+</view>
+<view wx:else>还没添加呢</view>
+<loading wx:if="{{!loadingHidden}}">加载中</loading>

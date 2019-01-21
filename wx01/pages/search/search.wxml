@@ -1,0 +1,18 @@
+<!--pages/search/search.wxml-->
+
+    
+
+<text>{{notFind}}</text>
+<view class='container'wx:if="{{loadingHidden}}">
+    <view class='list'>搜索列表</view>
+    <view class='goodsInfo'>
+        <image src='{{root}}{{img}}' bindtap='go' data-id='{{id}}'></image>
+        <view class='right'>
+            <view class='name'>{{name}}</view>
+            <view class='type'>{{type}}</view>
+            <view class='price'>$20</view>
+            <view class='desc' style='margin-left:10px'>超级无敌大减价</view>
+        </view>
+    </view>
+</view>
+<loading wx:if="{{!loadingHidden}}"></loading>

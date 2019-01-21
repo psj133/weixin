@@ -1,0 +1,28 @@
+<!--pages/details/details.wxml-->
+
+<view class='container' wx:if="{{loadingHidden}}">
+     <view class='info'>
+        <view class='name'>{{name}}</view>
+        <image src='{{root}}{{goodImg}}' class='goods'></image>
+        <view class='type'>{{type}}
+    
+         
+        </view>
+        <view class='end'>
+                 <view class='price'>$20</view>
+                 <picker value="{{index}}" range="{{array}}" bindchange='changeNum'>
+
+    <view class="picker">数量：{{count}}</view>   
+     </picker>
+               <view class='join'>
+                <text>加入购物车</text>
+                <image class="cart-icon" src="../../imgs/icon/cart.png" style='width:40px;height:40px' bindtap='joinCart' data-counts="{{count}}" data-price='$20'></image>
+                <view  class='sel' wx:if="{{selectCounts>0}}">{{selectCounts}}</view>
+            </view>
+        
+        </view>
+         
+ 
+     </view>
+</view>
+<loading wx:if="{{!loadingHidden}}">加载中...</loading> 

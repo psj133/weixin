@@ -1,0 +1,9 @@
+<!--pages/address/address.wxml-->
+<view class='container'>
+   <view class='info'><text>收件人</text><input placeholder='收件人' bindinput='getPerson'></input></view>
+    <view class='info'><text>联系电话</text><input placeholder='联系电话' bindinput='getPhone'></input></view>
+      <view class='info'><text>所在地区</text><input placeholder='所在地区' bindinput='getArea'></input></view>
+        <view class='info'><text>详细地址</text><input placeholder='详细地址' bindinput='getAddress'></input></view>
+          <view class='info'><text>邮编</text><input placeholder='邮编' bindinput='getEmail'></input></view>
+          <button bindtap='saveInfo'>保存</button>
+</view>

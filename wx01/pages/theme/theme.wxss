@@ -1,0 +1,5 @@
+/* pages/theme/theme.wxss */
+@import "../template/template.wxss"
+.theme>image{
+   width: 100%;
+}

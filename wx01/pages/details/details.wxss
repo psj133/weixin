@@ -1,0 +1,50 @@
+/* pages/details/details.wxss */
+.name{
+  width: 100%;
+  height: 70px;
+  font-size: 30px;
+  color: red;
+  text-align: center;
+  background: skyblue;
+  line-height: 70px;
+}
+.goods{
+  width: 90%;
+  margin:10px 5vw;
+}
+.type{
+  text-align: center;
+  font-size: 25px;
+  text-shadow: 2px 2px 2px #FF0000
+}
+.end{
+  width: 90%;
+  height:100px;
+  margin: auto;
+  background:skyblue;
+  margin-top:20px;
+  display: flex;
+  position: relative;
+}
+.end .price{
+  margin-left:30px;
+  line-height: 100px;
+
+}
+.end .picker{
+   margin-left:10px;
+  line-height: 100px;
+}
+.join{
+  margin-top:20px;
+  margin-left: 40px;
+  
+}
+.sel{
+  font-size: 14px;
+  font-weight: bolder;
+  color: red;
+  position: absolute;
+  top:10px;
+  right: 30px;
+}

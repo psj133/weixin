@@ -1,0 +1,46 @@
+<!--pages/home/home.wxml-->
+<import src='../template/template.wxml'/>
+<view class='container' hidden="{{!loadinghidden}}">
+    <view class='search'>
+   <input name="input"  bindinput='getInputVal' />
+   <icon type='search' bindtap='search'></icon>
+</view>
+<view>
+<swiper class='banner-swiper'
+autoplay
+circular
+interval='2000'
+duration='1000'
+indicator-dots
+indicator-active-color='green'
+indicator-color='red'
+>
+
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      
+      <image src="{{root}}{{item.path}}" class="slide-image"        width="355" height="150"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+</view>
+
+<view class='theme'>
+  
+  <view wx:for="{{imgUrls}}" wx:key="{{index}}" class='list' bindtap='goTheme' data-id='{{item._id}}' data-title='{{item.name}}'>
+
+    <image src='{{root+item.path}}' class='img'></image>
+ 
+  <view>{{item.name}}</view>
+  </view>
+ 
+</view>
+<view class='goods'> 
+    <template is='goods' data="{{root,products}}"></template>
+</view>
+
+</view>
+<loading hidden="{{loadinghidden}}">加载中...</loading>
+
+

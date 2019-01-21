@@ -1,0 +1,40 @@
+<!--pages/pay/pay.wxml-->
+<view class='container'>
+  <view class='address' wx:if="{{infoList.length==0}}">
+        <view class='add'>请添加地址{{len}}</view>
+        <image src='../../imgs/icon/arrow.png' bindtap='getLocation' class='selAddr'></image>
+     </view>
+     <view wx:else class='address1'>
+        <view wx:for="{{infoList}}" wx:key="{{index}}" class='head'>
+           <view class='name'>收货人:{{item.person}}</view>
+           <view class='phone'>{{item.phone}}</view>
+        </view>
+        <view wx:for="{{infoList}}" wx:key="{{index}}" class='footer'>
+           <view class='name'>收货地址:{{item.area}}{{item.address}}({{item.email}})</view>
+        </view>
+   
+     
+     </view>
+     <view class='goodsList'>
+        <view class='title'>购物清单</view>
+        <view class='goods' wx:for="{{goods}}" wx:key="{{index}}">
+            <view class='left'>
+              <image src='{{root}}{{item.goodImg}}' style='width:110px;height:110px;margin:10px'></image>
+            </view>
+            <view class='middle'>
+                <view>{{item.name}}</view>
+                <view>{{item.type}}</view>
+            </view>
+            <view class='right'>
+                <view>{{item.price}}</view>
+                <view>x{{item.sum}}</view>
+            </view>
+        </view>
+        <view class='bottom'> 共有{{all}}件商品,总价:{{allPrice}}</view>
+     </view>
+     <view class='total'>
+        <view class='shouldPay'>实付:{{allPrice}}</view>
+        <view class='commit'>提交订单</view>
+     </view>
+
+</view>
